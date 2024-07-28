@@ -1,0 +1,9 @@
+To fulfill the requirements of this task, you will need to modify your board from Task M1.2P to use more
+than one sensor as input while using interrupts to deal with the inputs.
+
+In my implementation, I used the sound sensor available to me in the Arduino kit. It has four legs - from
+left to right as follows [A0 - Analog Pin 0 on the Arduino board, GND, + to 5V, and D0 - Digital Pin to
+maybe Arduino digital pin , we had the motion sensor connected to pin2]. Once you have the sound
+sensor connected, you will need to modify your program to capture the signal and maybe update the
+same led (built-in led) or update another led. Once you are done, please upload to the board and test
+your program.
