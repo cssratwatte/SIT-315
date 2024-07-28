@@ -1,0 +1,13 @@
+Overview of the task
+To fulfill the requirements of this task, you will need to design a simple sense-think-act system using Arduino
+board that uses one of the sensors available to you to sense - e.g. temprature, motion, sound, etc. Then think -
+update your system status - e.g. motion flag on/off. Finally, act using one of the available actuators for you - e.g.
+turn a led on/off. Make sure to print the inputs (from the sensors) and outputs (from the actuators) on the Serial
+so we can monitor this from the Arduino IDE.
+In my implementation, I used motion sensor HC-SR505 as input and built-in led as output.
+HC-SR505 has three legs: from left to right (front facing), the legs are: 1) GND - connect to the GND pin on the
+Arduino board , 2) Digital Output connect to digital input pin 2 on the Arduino board), and 3) + to the 5V pin on
+the Arduino board.
+In your loop function, make sure to digitalRead from pin 2 (where the motion data comes in), check the value
+HIGH or LOW, then update the led by using digitalWrite.
+Once you are done, please upload to the board and test your program.
