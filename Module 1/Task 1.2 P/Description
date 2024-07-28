@@ -1,0 +1,10 @@
+To fulfill the requirements of this task, you will need to modify your implementation from Task M1.T1P to
+use interrupts instead of adding your code to the Loop function. If you have done this already in Task1.1P,
+please just resubmit your program here under this task name - i.e. Task1.2P.
+As discussed in the lecture, interrupts give you the chance to handle high-priority inputs without having
+to wait for the system to finish the current task (if the current task is higher priority we might need to
+switch interrupts off until it is done).
+In your implementation, you will need to review Arduino Interrupts here
+(http://playground.arduino.cc/code/interrupts). I also recommend watching this Youtube video
+(https://www.youtube.com/watch?v=J61_PKyWjxU). The first 10 minutes is all what you need to get this
+done.
