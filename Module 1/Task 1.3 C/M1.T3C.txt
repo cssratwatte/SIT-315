@@ -1,0 +1,53 @@
+// Defining pin numbers for LED and the sensors 
+const int sensorPin1 = 2; 
+const int sensorPin2 = 3; 
+const int ledPin = LED_BUILTIN; 
+
+// Variables to store the state of the sensors
+int sensorState1 = 0; 
+int sensorState2 = 0; 
+
+void setup() 
+{ 
+    // Setting sensor pins as inputs 
+    pinMode(sensorPin1, INPUT); 
+    pinMode(sensorPin2, INPUT); 
+
+    // Setting LED pin as an output 
+    pinMode(ledPin, OUTPUT); 
+
+    // Starting serial communication for debugging 
+    Serial.begin(9600); 
+
+    // Attaching interrupts to pins 2 and 3, triggered on state change 
+    attachInterrupt(digitalPinToInterrupt(sensorPin1), sensorISR, CHANGE); 
+    attachInterrupt(digitalPinToInterrupt(sensorPin2), sensorISR, CHANGE); 
+} 
+
+void loop() 
+{ 
+    // Small delay to improve performance 
+    delay(10); 
+} 
+
+void sensorISR() 
+{ 
+    // Reading the states of the sensors 
+    sensorState1 = digitalRead(sensorPin1); 
+    sensorState2 = digitalRead(sensorPin2); 
+
+    // Checking if either sensor is activated, and turning on the LED if so 
+    if (sensorState1 == HIGH || sensorState2 == HIGH) 
+    { 
+        digitalWrite(ledPin, HIGH); 
+        Serial.println("Sensor activated, LED On!"); 
+    } 
+    else 
+    { 
+        digitalWrite(ledPin, LOW); 
+        Serial.println("LED Off!"); 
+    } 
+
+    // Small delay to improve performance 
+    delay(10); 
+}
